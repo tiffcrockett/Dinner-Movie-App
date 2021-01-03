@@ -4,15 +4,15 @@ var slideIndex = 0;
 carousel();
 
 function carousel() {
-  var i;
-  var x = $(".mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > x.length) {slideIndex = 1}
-  x[slideIndex-1].style.display = "block";
-  setTimeout(carousel, 3000); // Change image every 3 seconds
+    var i;
+    var x = $(".mySlides");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > x.length) { slideIndex = 1 }
+    x[slideIndex - 1].style.display = "block";
+    setTimeout(carousel, 3000); // Change image every 3 seconds
 }
 
 
@@ -40,10 +40,10 @@ $("#getMovieDinnerInfo").on("click", function (event) {
     renderInput()
 
 })
-function getMovie() {
-
+function getMovie(genre) {
+    var genre = response.genre
     var movieTitle = $("#movie-input").val().trim();
-    var queryURL = "http://www.omdbapi.com/?t=" + movieTitle + "&apikey=" + "6cc7def2";
+    var queryURL = "https://www.omdbapi.com/?t=" + movieTitle + "&apikey=" + "6cc7def2";
 
     $.ajax({
         url: queryURL,
@@ -98,7 +98,6 @@ function getYelp() {
         method: 'GET',
         dataType: 'json',
         success: function (data) {
-            console.log('success: ' + data);
             console.log(data)
             // Grab the results from the API JSON return
             var totalresults = data.total;
@@ -113,7 +112,6 @@ function getYelp() {
                         return false;
                     }
 
-                    var id = item.id;
                     var image = item.image_url;
                     var name = item.name;
                     var category = item.categories[0].title
@@ -125,13 +123,13 @@ function getYelp() {
                     var city = item.location.city;
                     var state = item.location.state;
                     var zipcode = item.location.zip_code;
-                    // Append our result into our page. Easier to call on one call for Yelp API.
-                    return ($('#food-1').append('<div id="' + id + '" style="margin-top:25px;margin-bottom:30px;margin-left:35px;font-size:13px;"><img src="' + image + '" style="width:100px;height:95px;justify-content:center;"><br><b>' + name + ' under ' + category + ' Category</b> <br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>')
-                   
-                    
+                    // Append our result into our page. Easier to call on one call for Yelp API. Need to random generate
+                    return ($('#food-1').append('<div style="margin-top:25px;margin-bottom:30px;margin-left:35px;font-size:13px;"><img src="' + image + '" style="width:100px;height:95px;justify-content:center;"><br><b>' + name + ' under ' + category + ' Category</b> <br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>')
+
+
                     );
-                
-                
+
+
                 });
 
             }
@@ -140,17 +138,9 @@ function getYelp() {
 
 }
 
-
-
-// draft code. Might have to call both queryurl again 
-// function compareTest() {
-//     var genreType = response.genre
-
-// if (genreType === action) {
-//     append food category
-// }
-
-// }
+// note: testing pulling api together
+    // var genre = response.Genre
+    // var category = item.categories[0].title
 
 
 
