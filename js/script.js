@@ -43,7 +43,7 @@ $("#getMovieDinnerInfo").on("click", function (event) {
 function getMovie() {
 
     var movieTitle = $("#movie-input").val().trim();
-    var queryURL = "http://www.omdbapi.com/?t=" + movieTitle + "&apikey=" + "6cc7def2";
+    var queryURL = "https://www.omdbapi.com/?t=" + movieTitle + "&apikey=" + "6cc7def2";
 
     $.ajax({
         url: queryURL,
