@@ -1,4 +1,5 @@
 
+
 var slideIndex = 0;
 carousel();
 
@@ -33,7 +34,8 @@ var foodChoices = {
 
 
 $("#getMovieDinnerInfo").on("click", function(event){
-event.preventDefault();  
+event.preventDefault();   
+
 
     var movieTitle = $("#movie-input").val().trim();
     var queryURL = "http://www.omdbapi.com/?t=" + movieTitle + "&apikey=" + "6cc7def2";

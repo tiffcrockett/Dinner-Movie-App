@@ -6,7 +6,7 @@
 
 body{
     font-family: 'Montserrat', sans-serif;
-    background-color:#2d597e;
+    background-color:#b69974;
 }  
 
 .wrapper { 
@@ -60,7 +60,7 @@ h1 {
 }    
 
 #footer { 
-    background-color: #cccccc;
+    background-color: #ad1457;
 }
 
 @media (min-width: 768px) { 
@@ -68,6 +68,14 @@ h1 {
     h1 {
         font-size: 55px;
         font-weight: bold;
+    }  
+
+    .text {
+        font-size: 20px;
+    } 
+
+    #input-header {
+        font-size: 15px;
     }
 }
 
