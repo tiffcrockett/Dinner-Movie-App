@@ -105,7 +105,7 @@ function getYelp() {
             // If our results are greater than 0, continue
             if (totalresults > 0) {
                 // Display a header on the page with the number of results
-                $('#food-1').append('<h5>We discovered ' + totalresults + ' results! Below are our top 3 recommendations:</h5>');
+                $('#food-1').append('<h6 style="padding-left:35px;">Here are our dinner suggestions:</h6>');
                 // Itirate through the JSON array of 'businesses' which was returned by the API
 
                 $.each(data.businesses, function (i, item) {
@@ -126,7 +126,7 @@ function getYelp() {
                     var state = item.location.state;
                     var zipcode = item.location.zip_code;
                     // Append our result into our page. Easier to call on one call for Yelp API.
-                    return ($('#food-1').append('<div id="' + id + '" style="margin-top:50px;margin-bottom:50px;justify-content: center;"><img src="' + image + '" style="width:200px;height:150px;justify-content: center;"><br>We found <b>' + name + ' under ' + category + ' Category</b> <br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>')
+                    return ($('#food-1').append('<div id="' + id + '" style="margin-top:25px;margin-bottom:30px;margin-left:35px;font-size:13px;"><img src="' + image + '" style="width:200px;height:150px;justify-content: center;"><br>We found <b>' + name + ' under ' + category + ' Category</b> <br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>')
                     
                     
                     );
