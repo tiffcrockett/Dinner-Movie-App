@@ -1,4 +1,3 @@
-
 var slideIndex = 0;
 carousel();
 
@@ -15,23 +14,6 @@ function carousel() {
 }
 
 
-var foodChoices = {
-    Action: ["Hot dogs", "Sandwiches", "Burgers"],
-    Animation: ["Comfort food", "Pizza", "Fast food"],
-    Comedy: ["Burgers", "Fast food", "Mexican"],
-    Crime: ["Cheesesteaks", "Chicken Wings", "Fish & Chips"],
-    Drama: ["Soul food", "Soup", "Italian"],
-    Experimental: ["Japanese", "Latin American", "Seafood"],
-    Fantasy: ["Italian", "Pizza", "Noodles"],
-    Historical: ["French", "Steakhouses", "Cafes"],
-    Horror: ["Noodles", "Steakhouses", "Burgers"],
-    Romance: ["Cafes", "Italian", "French"],
-    Scifi: ["Chinese", "Hawaiian", "Japanese"],
-    Thriller: ["Pizza", "Noodles", "Japanese"],
-    Western: ["Diners", "Steakhouses", "Burgers"]
-}
-
-
 $("#getMovieDinnerInfo").on("click", function (event) {
     event.preventDefault();
     getYelp();
@@ -42,7 +24,7 @@ $("#getMovieDinnerInfo").on("click", function (event) {
 
 
 function getMovie() {
-    
+
     var movieTitle = $("#movie-input").val().trim();
     var queryURL = "https://api.themoviedb.org/3/search/movie?api_key=e58ef792d8f88d2594be55889e57e8aa&query=" + movieTitle + "&append_to_response=videos";
 
@@ -59,11 +41,12 @@ function getMovie() {
         var plot = response.results[1].overview;
         var released = response.results[1].release_date;
 
-
         var movieTitle = $("<h5></h5>").text(title);
         var plotInfo = $("<p>").text("Plot: " + plot);
-        var releaseInfo = $("<p>").text("Released: "+ released);
+        var releaseInfo = $("<p>").text("Released: " + released);
+
    
+
         movieInfoDisplay.append(movieTitle);
         movieInfoDisplay.append(plotInfo);
         movieInfoDisplay.append(releaseInfo);
@@ -81,6 +64,7 @@ function getMovie() {
 
     })
 };
+
 
 function getYelp() {
     var zipCode = $("#zip-code-input").val().trim();
@@ -123,24 +107,44 @@ function getYelp() {
                     // Append our result into our page. Easier to call on one call for Yelp API. Need to random generate
                     return ($('#food-1').append('<div style="margin-top:25px;margin-bottom:30px;margin-left:35px;font-size:13px;"><img src="' + image + '" style="width:100px;height:95px;justify-content:center;"><br><b>' + name + ' under ' + category + ' Category</b> <br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>')
 
-
                     );
-
-
                 });
-
             }
         }
     });
-
 }
-
-// note: testing pulling api together
-    // var genre = response.Genre
-    // var category = item.categories[0].title
 
 function renderInput() {
     $("#food-1").empty()
     $("#movie-view").empty()
     $("getMovieDinnerInfo").empty()
 }
+
+
+// function categories() {
+//     if (getMovie() === response.results[0].genres.id[18]) {
+
+//     }
+// }
+// var foodChoices = {
+//     28 Action: ["Burgers"],
+//     16 Animation: ["Pizza"],
+//     35 Comedy: ["Mexican"],
+//     80 Crime: ["Chicken Wings"],
+//     18 Drama: ["Soul food",
+//     10751 Family: ["Italian"],
+//     14 Fantasy: ["Seafood"],
+//     36 History: ["French"],
+//     27 Horror: ["Steakhouses"],
+//     10749 Romance: ["Cafes"],
+//     878 Scifi: ["Hawaiian"],
+//     53 Thriller: ["Japanese"],
+//     37 Western: ["Diners"]
+// }
+
+
+// note: testing pulling api together
+// var genre = response.Genre
+// var category = item.categories[0].title
+
+
