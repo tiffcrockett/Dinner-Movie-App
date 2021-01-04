@@ -1,5 +1,3 @@
-
-
 var slideIndex = 0;
 carousel();
 
@@ -37,9 +35,11 @@ $("#getMovieDinnerInfo").on("click", function (event) {
     event.preventDefault();
     getYelp();
     getMovie();
-    renderInput();
+    renderInput();  
+    $("#find-movies").show();
+}) 
 
-})
+
 function getMovie() {
     
     var movieTitle = $("#movie-input").val().trim();
@@ -53,16 +53,17 @@ function getMovie() {
 
         console.log(response);
 
-        var movieInfoDisplay = $('<div style="margin-top:25px;margin-bottom:10px;margin-left:50px;margin-right:30px;font-size:12px;">');
+        var movieInfoDisplay = $('<div style="margin-top:20px;margin-bottom:2px;margin-left:50px;margin-right:30px;font-size:12px;">');
         var title = response.results[1].original_title
         var plot = response.results[1].overview;
         var released = response.results[1].release_date;
 
 
-        var movieTitle = $("<h6></h6").text(title);
+        var movieTitle = $("<h5></h5>").text(title);
         var plotInfo = $("<p>").text("Plot: " + plot);
-        var releaseInfo = $("<p>").text("Released: " + released);
+        var releaseInfo = $("<p>").text("Released: "+ released);
    
+      
         movieInfoDisplay.append(movieTitle);
         movieInfoDisplay.append(plotInfo);
         movieInfoDisplay.append(releaseInfo);
@@ -70,7 +71,7 @@ function getMovie() {
 
         $("#movie-view").append(movieInfoDisplay);
 
-        var movieImgDisplay = $('<div style="margin-top:25px;margin-bottom:10px;margin-left:50px;font-size:12px;">');
+        var movieImgDisplay = $('<div style="margin-top:20px;margin-bottom:2px;margin-left:50px;font-size:12px;">');
 
         var imgURL = response.results[1].poster_path;
         var img = $("<img>").attr("src", "https://image.tmdb.org/t/p/w300" + imgURL);
@@ -101,7 +102,7 @@ function getYelp() {
             // If our results are greater than 0, continue
             if (totalresults > 0) {
                 // Display a header on the page with the number of results
-                $('#food-1').append('<h6 style="padding-left:35px;">Here are our dinner suggestions:</h6>');
+                $('#food-1').append('<h6 style="padding-left:35px;color:#ad1457;font-weight:bold;">Here are our dinner suggestions:</h6>');
                 // Itirate through the JSON array of 'businesses' which was returned by the API
 
                 $.each(data.businesses, function (i, item) {
@@ -121,8 +122,7 @@ function getYelp() {
                     var state = item.location.state;
                     var zipcode = item.location.zip_code;
                     // Append our result into our page. Easier to call on one call for Yelp API. Need to random generate
-                    return ($('#food-1').append('<div style="margin-top:25px;margin-bottom:30px;margin-left:35px;font-size:13px;"><img src="' + image + '" style="width:100px;height:95px;justify-content:center;"><br><b>' + name + ' under ' + category + ' Category</b> <br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>')
-
+                    return ($('#food-1').append('<div style="margin-top:25px;margin-bottom:30px;margin-left:35px;font-size:13px;"><img src="' + image + '" style="width:100px;height:95px;justify-content:center;"><br><b>' + name + ' under ' + category + ' Category</b> <br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>');
 
                     );
 
@@ -144,8 +144,5 @@ function renderInput() {
     $("#movie-view").empty()
     $("getMovieDinnerInfo").empty()
 }
-
-
-
 
 

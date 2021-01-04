@@ -52,13 +52,19 @@ h1 {
     padding: 5px;
     font-size: 11px;
     color: #fff;
-}   
+} 
 
-#help {
-    color: #147cad;
-    text-decoration: underline;
-}    
+#find-movies {
+    display: none;
+    margin: 5px 0 0 50px;
+} 
 
+#find {
+    margin-left: 100px;
+    font-weight: bold;
+    color: #ad1457;
+}
+    
 #footer { 
     background-color: #ad1457;
 }
@@ -78,5 +84,7 @@ h1 {
         font-size: 15px;
     }
 }
+
+
 
 
