@@ -56,11 +56,11 @@ h1 {
 
 #find-movies {
     display: none;
-    margin: 5px 0 0 50px;
+    margin: 5px 0 30px 0;
 } 
 
-#find {
-    margin-left: 100px;
+#find { 
+    padding-top: 15px;
     font-weight: bold;
     color: #ad1457;
 }
