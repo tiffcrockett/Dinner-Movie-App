@@ -16,32 +16,17 @@ function carousel() {
 }
 
 
-var foodChoices = {
-    Action: ["Burgers"],
-    Animation: ["Pizza"],
-    Comedy: ["Mexican"],
-    Crime: ["Chicken Wings"],
-    Drama: ["Soul food",
-    Experimental: ["Seafood"],
-    Fantasy: ["Italian"],
-    Historical: ["French"],
-    Horror: ["Steakhouses"],
-    Romance: ["Cafes"],
-    Scifi: ["Hawaiian"],
-    Thriller: ["Japanese"],
-    Western: ["Diners"]
-}
-
-
-
-
 $("#getMovieDinnerInfo").on("click", function (event) {
     event.preventDefault();
     getYelp();
     getMovie();
     renderInput();
 
-})
+    
+   
+});
+
+
 function getMovie() {
     
     var movieTitle = $("#movie-input").val().trim();
@@ -56,14 +41,14 @@ function getMovie() {
         console.log(response);
 
         var movieInfoDisplay = $('<div style="margin-top:25px;margin-bottom:10px;margin-left:50px;margin-right:30px;font-size:12px;">');
-        var title = response.results[1].original_title
-        var plot = response.results[1].overview;
-        var released = response.results[1].release_date;
-
-
+        var title = response.results[0].original_title
+        var plot = response.results[0].overview;
+        var released = response.results[0].release_date;
+     
         var movieTitle = $("<h6></h6").text(title);
         var plotInfo = $("<p>").text("Plot: " + plot);
         var releaseInfo = $("<p>").text("Released: " + released);
+     
    
         movieInfoDisplay.append(movieTitle);
         movieInfoDisplay.append(plotInfo);
@@ -74,7 +59,7 @@ function getMovie() {
 
         var movieImgDisplay = $('<div style="margin-top:25px;margin-bottom:10px;margin-left:50px;font-size:12px;">');
 
-        var imgURL = response.results[1].poster_path;
+        var imgURL = response.results[0].poster_path;
         var img = $("<img>").attr("src", "https://image.tmdb.org/t/p/w300" + imgURL);
         movieImgDisplay.append(img);
 
@@ -86,7 +71,7 @@ function getMovie() {
 
 function getYelp() {
     var zipCode = $("#zip-code-input").val().trim();
-
+ 
     var baseURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?cc=US&location=" + zipCode + "&categories=restaurants"
     $.ajax({
         url: baseURL,
@@ -136,6 +121,29 @@ function getYelp() {
     });
 
 }
+
+
+// function categories() {
+//     if (getMovie() === response.results[0].genres.id[18]) {
+
+//     }
+// }
+// var foodChoices = {
+//     28 Action: ["Burgers"],
+//     16 Animation: ["Pizza"],
+//     35 Comedy: ["Mexican"],
+//     80 Crime: ["Chicken Wings"],
+//     18 Drama: ["Soul food",
+//     10751 Family: ["Italian"],
+//     14 Fantasy: ["Seafood"],
+//     36 History: ["French"],
+//     27 Horror: ["Steakhouses"],
+//     10749 Romance: ["Cafes"],
+//     878 Scifi: ["Hawaiian"],
+//     53 Thriller: ["Japanese"],
+//     37 Western: ["Diners"]
+// }
+
 
 // note: testing pulling api together
     // var genre = response.Genre
