@@ -53,41 +53,33 @@ function getMovie() {
 
         console.log(response);
 
-            
-            
-    
-        var movieInfoDisplay = $("<div>");
+        var movieInfoDisplay = $('<div style="margin-top:25px;margin-bottom:10px;margin-left:50px;margin-right:30px;font-size:12px;">');
         var title = response.results[1].original_title
         var plot = response.results[1].overview;
         var released = response.results[1].release_date;
 
 
-        var movieTitle = $("<p>").text(title);
+        var movieTitle = $("<h6></h6").text(title);
         var plotInfo = $("<p>").text("Plot: " + plot);
         var releaseInfo = $("<p>").text("Released: " + released);
    
-
-
         movieInfoDisplay.append(movieTitle);
         movieInfoDisplay.append(plotInfo);
         movieInfoDisplay.append(releaseInfo);
 
 
-
         $("#movie-view").append(movieInfoDisplay);
 
-        var movieImgDisplay = $("<div>");
+        var movieImgDisplay = $('<div style="margin-top:25px;margin-bottom:10px;margin-left:50px;font-size:12px;">');
 
         var imgURL = response.results[1].poster_path;
-        var img = $("<img>").attr("src", "https://image.tmdb.org/t/p/w500" + imgURL);
+        var img = $("<img>").attr("src", "https://image.tmdb.org/t/p/w300" + imgURL);
         movieImgDisplay.append(img);
 
         $("#movie-view").prepend(movieImgDisplay);
 
     })
 };
-
-
 
 
 function getYelp() {
@@ -146,8 +138,6 @@ function getYelp() {
 // note: testing pulling api together
     // var genre = response.Genre
     // var category = item.categories[0].title
-
-
 
 function renderInput() {
     $("#food-1").empty()
