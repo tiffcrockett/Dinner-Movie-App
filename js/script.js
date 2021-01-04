@@ -71,7 +71,7 @@ function getMovie() {
 
         $("#movie-view").append(movieInfoDisplay);
 
-        var movieImgDisplay = $('<div style="margin-top:20px;margin-bottom:2px;margin-left:40px;font-size:12px;">');
+        var movieImgDisplay = $('<div style="margin-top:20px;margin-bottom:2px;margin-left:35px;font-size:12px;">');
 
         var imgURL = response.results[1].poster_path;
         var img = $("<img>").attr("src", "https://image.tmdb.org/t/p/w300" + imgURL);
