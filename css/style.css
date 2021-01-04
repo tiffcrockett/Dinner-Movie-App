@@ -67,6 +67,27 @@ h1 {
     padding-top: 16px; 
     padding-bottom: 5px;
     padding-left: 0px;
+} 
+
+#first-date-text {
+    margin: 15px;
+    padding: 25px;
+} 
+
+#on-date-img {
+    display: none;
+    height:150px;
+    width: 160px;
+    padding: 5px;
+} 
+
+#list {
+    margin-left: 30px;
+} 
+
+#forward {
+    font-size: small;
+    float:right;
 }
     
 #footer { 
@@ -90,5 +111,13 @@ h1 {
 
     #movie-view { 
         border-bottom: none;
-    }
+    } 
+
+    #on-date-img { 
+        display: block;
+        float:right;
+        height:250px;
+        width: 260px;
+        padding: 10px;
+    } 
 }
