@@ -35,15 +35,16 @@ var foodChoices = {
 
 $("#getMovieDinnerInfo").on("click", function (event) {
     event.preventDefault();
-    getYelp()
-    getMovie()
-    renderInput()
+    getYelp();
+    getMovie();
+    renderInput();
 
 })
-function getMovie(genre) {
-    var genre = response.genre
+function getMovie() {
+    
     var movieTitle = $("#movie-input").val().trim();
-    var queryURL = "https://www.omdbapi.com/?t=" + movieTitle + "&apikey=" + "6cc7def2";
+    var queryURL = "https://api.themoviedb.org/3/search/movie?api_key=e58ef792d8f88d2594be55889e57e8aa&query=" + movieTitle + "&append_to_response=videos";
+
 
     $.ajax({
         url: queryURL,
@@ -52,29 +53,33 @@ function getMovie(genre) {
 
         console.log(response);
 
+            
+            
+    
         var movieInfoDisplay = $("<div>");
+        var title = response.results[1].original_title
+        var plot = response.results[1].overview;
+        var released = response.results[1].release_date;
 
-        var plot = response.Plot;
-        var released = response.Released;
-        var rating = response.Rated;
-        var genre = response.Genre
 
+        var movieTitle = $("<p>").text(title);
         var plotInfo = $("<p>").text("Plot: " + plot);
         var releaseInfo = $("<p>").text("Released: " + released);
-        var genreInfo = $("<p>").text("Genre: " + genre);
-        var ratingInfo = $("<p>").text("Rating: " + rating);
+   
 
+
+        movieInfoDisplay.append(movieTitle);
         movieInfoDisplay.append(plotInfo);
         movieInfoDisplay.append(releaseInfo);
-        movieInfoDisplay.append(genreInfo);
-        movieInfoDisplay.append(ratingInfo);
+
+
 
         $("#movie-view").append(movieInfoDisplay);
 
         var movieImgDisplay = $("<div>");
 
-        var imgURL = response.Poster;
-        var img = $("<img>").attr("src", imgURL);
+        var imgURL = response.results[1].poster_path;
+        var img = $("<img>").attr("src", "https://image.tmdb.org/t/p/w500" + imgURL);
         movieImgDisplay.append(img);
 
         $("#movie-view").prepend(movieImgDisplay);
