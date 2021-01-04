@@ -1,3 +1,5 @@
+
+
 var slideIndex = 0;
 carousel();
 
@@ -60,7 +62,7 @@ function getMovie() {
 
 
         var movieTitle = $("<h5></h5>").text(title);
-        var plotInfo = $("<p><b>").text("Plot: " + plot);
+        var plotInfo = $("<p>").text("Plot: " + plot);
         var releaseInfo = $("<p>").text("Released: "+ released);
    
         movieInfoDisplay.append(movieTitle);
