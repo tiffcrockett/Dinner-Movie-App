@@ -52,17 +52,42 @@ h1 {
     padding: 5px;
     font-size: 11px;
     color: #fff;
-} 
+}  
+
+#movie-view {
+    border-bottom: 0.5px solid lightgray
+}
 
 #find-movies {
     display: none;
-    margin: 5px 0 0 50px;
+    margin: 10px 20px 30px 45px; 
 } 
 
-#find {
-    margin-left: 100px;
-    font-weight: bold;
-    color: #ad1457;
+#find { 
+    padding-top: 16px; 
+    padding-bottom: 5px;
+    padding-left: 0px;
+} 
+
+#first-date-text {
+    margin: 15px;
+    padding: 25px;
+} 
+
+#on-date-img {
+    display: none;
+    height:150px;
+    width: 160px;
+    padding: 5px;
+} 
+
+#list {
+    margin-left: 30px;
+} 
+
+#forward {
+    font-size: small;
+    float:right;
 }
     
 #footer { 
@@ -82,5 +107,17 @@ h1 {
 
     #input-header {
         font-size: 15px;
-    }
+    }  
+
+    #movie-view { 
+        border-bottom: none;
+    } 
+
+    #on-date-img { 
+        display: block;
+        float:right;
+        height:250px;
+        width: 260px;
+        padding: 10px;
+    } 
 }
