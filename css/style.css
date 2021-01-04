@@ -11,7 +11,7 @@ body{
 
 .wrapper { 
     height: 100%;
-	padding: 50px 40px 0 40px; 
+	padding: 30px 25px 0 25px; 
 }
 
 .main-card {
@@ -52,12 +52,7 @@ h1 {
     padding: 5px;
     font-size: 11px;
     color: #fff;
-}   
-
-#help {
-    color: #147cad;
-    text-decoration: underline;
-}    
+}     
 
 #footer { 
     background-color: #ad1457;
