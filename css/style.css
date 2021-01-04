@@ -11,7 +11,7 @@ body{
 
 .wrapper { 
     height: 100%;
-	padding: 30px 25px 0 25px; 
+	padding: 50px 40px 0 40px; 
 }
 
 .main-card {
@@ -52,8 +52,19 @@ h1 {
     padding: 5px;
     font-size: 11px;
     color: #fff;
-}     
+} 
 
+#find-movies {
+    display: none;
+    margin: 5px 0 0 50px;
+} 
+
+#find {
+    margin-left: 100px;
+    font-weight: bold;
+    color: #ad1457;
+}
+    
 #footer { 
     background-color: #ad1457;
 }
@@ -73,5 +84,7 @@ h1 {
         font-size: 15px;
     }
 }
+
+
 
 

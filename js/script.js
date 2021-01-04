@@ -33,53 +33,53 @@ var foodChoices = {
 
 $("#getMovieDinnerInfo").on("click", function (event) {
     event.preventDefault();
-    getYelp()
-    getMovie()
-    renderInput()
+    getYelp();
+    getMovie();
+    renderInput();  
+    $("#find-movies").show();
+}) 
 
-})
-function getMovie(genre) {
-    var genre = response.genre
+
+function getMovie() {
+    
     var movieTitle = $("#movie-input").val().trim();
-    var queryURL = "https://www.omdbapi.com/?t=" + movieTitle + "&apikey=" + "6cc7def2";
+    var queryURL = "https://api.themoviedb.org/3/search/movie?api_key=e58ef792d8f88d2594be55889e57e8aa&query=" + movieTitle + "&append_to_response=videos";
+
 
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        console.log(queryURL)
+
         console.log(response);
 
-        var movieInfoDisplay = $("<div>");
+        var movieInfoDisplay = $('<div style="margin-top:20px;margin-bottom:2px;margin-left:50px;margin-right:30px;font-size:12px;">');
+        var title = response.results[1].original_title
+        var plot = response.results[1].overview;
+        var released = response.results[1].release_date;
 
-        var plot = response.Plot;
-        var released = response.Released;
-        var rating = response.Rated;
-        var genre = response.Genre
 
-        var plotInfo = $("<p>").text("Plot: " + plot);
-        var releaseInfo = $("<p>").text("Released: " + released);
-        var genreInfo = $("<p>").text("Genre: " + genre);
-        var ratingInfo = $("<p>").text("Rating: " + rating);
-
+        var movieTitle = $("<h5></h5>").text(title);
+        var plotInfo = $("<p><b>").text("Plot: " + plot);
+        var releaseInfo = $("<p>").text("Released: "+ released);
+   
+        movieInfoDisplay.append(movieTitle);
         movieInfoDisplay.append(plotInfo);
         movieInfoDisplay.append(releaseInfo);
-        movieInfoDisplay.append(genreInfo);
-        movieInfoDisplay.append(ratingInfo);
+
 
         $("#movie-view").append(movieInfoDisplay);
 
-        var movieImgDisplay = $("<div>");
+        var movieImgDisplay = $('<div style="margin-top:20px;margin-bottom:2px;margin-left:50px;font-size:12px;">');
 
-        var imgURL = response.Poster;
-        var img = $("<img>").attr("src", imgURL);
+        var imgURL = response.results[1].poster_path;
+        var img = $("<img>").attr("src", "https://image.tmdb.org/t/p/w300" + imgURL);
         movieImgDisplay.append(img);
 
         $("#movie-view").prepend(movieImgDisplay);
 
     })
 };
-
 
 function getYelp() {
     var zipCode = $("#zip-code-input").val().trim();
@@ -100,7 +100,7 @@ function getYelp() {
             // If our results are greater than 0, continue
             if (totalresults > 0) {
                 // Display a header on the page with the number of results
-                $('#food-1').append('<h6 style="padding-left:35px;">Here are our dinner suggestions:</h6>');
+                $('#food-1').append('<h6 style="padding-left:35px;color:#ad1457;font-weight:bold;">Here are our dinner suggestions:</h6>');
                 // Itirate through the JSON array of 'businesses' which was returned by the API
 
                 $.each(data.businesses, function (i, item) {
@@ -138,11 +138,8 @@ function getYelp() {
     // var genre = response.Genre
     // var category = item.categories[0].title
 
-
-
 function renderInput() {
     $("#food-1").empty()
     $("#movie-view").empty()
     $("getMovieDinnerInfo").empty()
 }
-
