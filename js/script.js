@@ -22,13 +22,13 @@ $("#getMovieDinnerInfo").on("click", function (event) {
     getMovie();
     renderInput();
 
-    
-   
+
+
 });
 
 
 function getMovie() {
-    
+
     var movieTitle = $("#movie-input").val().trim();
     var queryURL = "https://api.themoviedb.org/3/search/movie?api_key=e58ef792d8f88d2594be55889e57e8aa&query=" + movieTitle + "&append_to_response=videos";
 
@@ -44,12 +44,12 @@ function getMovie() {
         var title = response.results[0].original_title
         var plot = response.results[0].overview;
         var released = response.results[0].release_date;
-     
+
         var movieTitle = $("<h6></h6").text(title);
         var plotInfo = $("<p>").text("Plot: " + plot);
         var releaseInfo = $("<p>").text("Released: " + released);
-     
-   
+
+
         movieInfoDisplay.append(movieTitle);
         movieInfoDisplay.append(plotInfo);
         movieInfoDisplay.append(releaseInfo);
@@ -71,7 +71,7 @@ function getMovie() {
 
 function getYelp() {
     var zipCode = $("#zip-code-input").val().trim();
- 
+
     var baseURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?cc=US&location=" + zipCode + "&categories=restaurants"
     $.ajax({
         url: baseURL,
@@ -146,8 +146,8 @@ function getYelp() {
 
 
 // note: testing pulling api together
-    // var genre = response.Genre
-    // var category = item.categories[0].title
+// var genre = response.Genre
+// var category = item.categories[0].title
 
 function renderInput() {
     $("#food-1").empty()
