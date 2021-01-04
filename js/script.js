@@ -17,20 +17,22 @@ function carousel() {
 
 
 var foodChoices = {
-    Action: ["Hot dogs", "Sandwiches", "Burgers"],
-    Animation: ["Comfort food", "Pizza", "Fast food"],
-    Comedy: ["Burgers", "Fast food", "Mexican"],
-    Crime: ["Cheesesteaks", "Chicken Wings", "Fish & Chips"],
-    Drama: ["Soul food", "Soup", "Italian"],
-    Experimental: ["Japanese", "Latin American", "Seafood"],
-    Fantasy: ["Italian", "Pizza", "Noodles"],
-    Historical: ["French", "Steakhouses", "Cafes"],
-    Horror: ["Noodles", "Steakhouses", "Burgers"],
-    Romance: ["Cafes", "Italian", "French"],
-    Scifi: ["Chinese", "Hawaiian", "Japanese"],
-    Thriller: ["Pizza", "Noodles", "Japanese"],
-    Western: ["Diners", "Steakhouses", "Burgers"]
+    Action: ["Burgers"],
+    Animation: ["Pizza"],
+    Comedy: ["Mexican"],
+    Crime: ["Chicken Wings"],
+    Drama: ["Soul food",
+    Experimental: ["Seafood"],
+    Fantasy: ["Italian"],
+    Historical: ["French"],
+    Horror: ["Steakhouses"],
+    Romance: ["Cafes"],
+    Scifi: ["Hawaiian"],
+    Thriller: ["Japanese"],
+    Western: ["Diners"]
 }
+
+
 
 
 $("#getMovieDinnerInfo").on("click", function (event) {
