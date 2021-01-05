@@ -2,10 +2,10 @@
 
 ## Table of Contents
 * [Description](#description)
-* [Webpage Images](#webpage_images)
+* [Webpage Images](#webpage-images)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Deployed Link](#deployed_link)
+* [Deployed Link](#deployed-link)
 * [Credits](#credits)
 * [License](#license)
 
@@ -17,7 +17,7 @@ The motivation for building this project was to create an application that seaml
 
 The reason for creating this application was to remove the burden of having to pick the right eatery when going on a dinner and a movie date. We wanted the task of having to choose the right place to eat the last of our user's worries.
 
-## Webpage Images
+## Webpage-Images
 
 ## Installation
 
@@ -30,7 +30,7 @@ No prior installation is required to properly use the Date Night application. Si
 1. The movie image, title, plot summary, and release date will be displayed below the movie input field.
 1. Three different eateries will be displayed under the zip code search area. This will display the restaurant's name, location, rating, and an image.
 
-## Deployed Link
+## Deployed-Link
 
 https://tiffcrockett.github.io/Dinner-Movie-App/
 
