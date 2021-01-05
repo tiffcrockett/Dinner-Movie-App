@@ -2,10 +2,11 @@
 
 ## Table of Contents
 * [Description](#description)
-* [Webpage Images](#webpage-images)
+* [Webpage-Images](#webpage-images)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Deployed Link](#deployed-link)
+* [Technologies-Used](#technologies-used)
+* [Deployed-Link](#deployed-link)
 * [Credits](#credits)
 * [License](#license)
 
@@ -29,6 +30,12 @@ No prior installation is required to properly use the Date Night application. Si
 1. Click the 'Search' button.
 1. The movie image, title, plot summary, and release date will be displayed below the movie input field.
 1. Three different eateries will be displayed under the zip code search area. This will display the restaurant's name, location, rating, and an image.
+
+## Technologies-Used
+
+* [Yelp api](https://www.yelp.com/developers/documentation/v3)
+* [TMDB api](https://www.themoviedb.org/documentation/api)
+* [W3.CSS Framework](https://www.w3schools.com/w3css/default.asp)
 
 ## Deployed-Link
 
