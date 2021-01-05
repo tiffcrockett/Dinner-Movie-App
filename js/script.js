@@ -37,9 +37,12 @@ function getMovie() {
         console.log(response);
 
         var movieInfoDisplay = $('<div style="margin-top:20px;margin-bottom:2px;margin-left:50px;margin-right:30px;font-size:12px;">');
-        var title = response.results[1].original_title
-        var plot = response.results[1].overview;
-        var released = response.results[1].release_date;
+        var title = response.results[0].original_title;
+        var plot = response.results[0].overview;
+        var released = response.results[0].release_date;
+        var genre = response.results[0].genre_ids[0];
+
+        console.log(genre);
 
         var movieTitle = $("<h5></h5>").text(title);
         var plotInfo = $("<p>").text("Plot: " + plot);
@@ -56,15 +59,14 @@ function getMovie() {
 
         var movieImgDisplay = $('<div style="margin-top:20px;margin-bottom:2px;margin-left:50px;font-size:12px;">');
 
-        var imgURL = response.results[1].poster_path;
+        var imgURL = response.results[0].poster_path;
         var img = $("<img>").attr("src", "https://image.tmdb.org/t/p/w300" + imgURL);
         movieImgDisplay.append(img);
 
         $("#movie-view").prepend(movieImgDisplay);
-
+        
     })
 };
-
 
 function getYelp() {
     var zipCode = $("#zip-code-input").val().trim();
@@ -126,21 +128,46 @@ function renderInput() {
 
 //     }
 // }
-// var foodChoices = {
-//     28 Action: ["Burgers"],
-//     16 Animation: ["Pizza"],
-//     35 Comedy: ["Mexican"],
-//     80 Crime: ["Chicken Wings"],
-//     18 Drama: ["Soul food",
-//     10751 Family: ["Italian"],
-//     14 Fantasy: ["Seafood"],
-//     36 History: ["French"],
-//     27 Horror: ["Steakhouses"],
-//     10749 Romance: ["Cafes"],
-//     878 Scifi: ["Hawaiian"],
-//     53 Thriller: ["Japanese"],
-//     37 Western: ["Diners"]
-// }
+var foodChoices = {
+    //Action
+    28: ["Hot dogs", "Sandwiches", "Burgers"],
+    //Adventure
+    12: ["Pizza", "Burgers", "Hot dogs"],
+    //Animation
+    16: ["Comfort food", "Pizza", "Fast food"],
+    //Comedy
+    35: ["Burgers", "Fast food", "Mexican"],
+    //Crime
+    80: ["Cheesesteaks", "Chicken Wings", "Fish & Chips"],
+    //Documentary
+    99: ["French", "Italian", "Japanese"],
+    //Drama
+    18: ["Soul food", "Soup", "Italian"],
+    //Family
+    10751: ["Pizza", "Fast food", "Burgers"],
+    //Fantasy
+    14: ["Italian", "Pizza", "Noodles"],
+    //History
+    36: ["French", "Steakhouses", "Cafes"],
+    //Horror
+    27: ["Noodles", "Steakhouses", "Burgers"],
+    //Music
+    10402: ["Pizza", "Chinese", "Sandwiches"],
+    //Mystery
+    9648: ["Japanese", "Chinese", "Fish & Chips"],
+    //Romance
+    10749: ["Cafes", "Italian", "French"],
+    //Science Fiction
+    878: ["Chinese", "Hawaiian", "Japanese"],
+    //TV Movie
+    10770: ["Pizza", "Chinese", "Burgers"],
+    //Thriller
+    53: ["Pizza", "Noodles", "Japanese"],
+    //War
+    10752: ["Cheesesteaks", "Steakhouses", "Fish & Chips"],
+    //Western
+    37: ["Diners", "Steakhouses", "Burgers"],
+}
 
 
 // note: testing pulling api together
