@@ -1,13 +1,13 @@
 # Dinner-Movie-App
 
 ## Table of Contents
-*[Description](#description)
-*[Webpage Images](#webpageimages)
-*[Installation](#installation)
-*[Usage](#usage)
-*[Deployed Link](#deployedlink)
-*[Credits](#credits)
-*[License](#license)
+* [Description](#description)
+* [Webpage Images](#webpage_images)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Deployed Link](#deployed_link)
+* [Credits](#credits)
+* [License](#license)
 
 ## Description
 
@@ -26,9 +26,9 @@ No prior installation is required to properly use the Date Night application. Si
 ## Usage
 
 1. On the main page of the application enter your movie title and your zip code in the corresponding fields.
-1.Click the 'Search' button.
-1.The movie image, title, plot summary, and release date will be displayed below the movie input field.
-1.Three different eateries will be displayed under the zip code search area. This will display the restaurant's name, location, rating, and an image.
+1. Click the 'Search' button.
+1. The movie image, title, plot summary, and release date will be displayed below the movie input field.
+1. Three different eateries will be displayed under the zip code search area. This will display the restaurant's name, location, rating, and an image.
 
 ## Deployed Link
 
@@ -36,9 +36,9 @@ https://tiffcrockett.github.io/Dinner-Movie-App/
 
 ## Credits
 
-[Tiffany Crockett](https://github.com/tiffcrockett)
-[Roseanne Nguyen](https://github.com/roseannenguyen)
-[Martin Mondaca](https://github.com/martinmondaca)
+* [Tiffany Crockett](https://github.com/tiffcrockett)
+* [Roseanne Nguyen](https://github.com/roseannenguyen)
+* [Martin Mondaca](https://github.com/martinmondaca)
 
 
 ## License
