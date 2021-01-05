@@ -107,7 +107,7 @@ function getYelp(genre) {
                     var zipcode = item.location.zip_code;
                     var RestaurantUrl = item.url
                     // Append our result into our page. Easier to call on one call for Yelp API. Need to random generate
-                    return ($('#food-1').append('<div style="margin-top:25px;margin-bottom:30px;margin-left:35px;font-size:13px;"><a href= "' + RestaurantUrl +'" target="_blank"><img src="' + image + '" style="width:100px;height:95px;justify-content:center;"></a><br>Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>')
+                    return ($('#food-1').append('<div style="margin-top:25px;margin-bottom:30px;margin-left:35px;font-size:13px;"><a href= "' + RestaurantUrl +'" target="_blank"><img src="' + image + '" style="width:100px;height:95px;justify-content:center;"></a><br><b>' + name + ' under ' + category + ' Category</b> <br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>')
 
                     );
                 });
@@ -124,31 +124,31 @@ function renderInput() {
 
 var foodChoices = {
     //Action
-    28: ["mexican", "sandwiches", "burgers"],
+    28: ["hotdog", "sandwiches", "burgers"],
     //Adventure
-    12: ["fishnchips", "burgers", "tacos"],
+    12: ["pizza", "burgers", "hotdog"],
     //Animation
-    16: ["comfortfood", "southern", "soulfood"],
+    16: ["comfortfood", "steakhouses", "soulfood"],
     //Comedy
-    35: ["burgers", "steakouses", "mexican"],
+    35: ["burgers", "noodles", "mexican"],
     //Crime
-    80: ["cheesesteaks", "chickenwings", "seafood"],
+    80: ["cheesesteaks", "chicken wings", "fishnchips"],
     //Documentary
-    99: ["vegetarian", "italian", "japanese"],
+    99: ["french", "italian", "japanese"],
     //Drama
-    18: ["soulfood", "comfortfood", "seafood"],
+    18: ["soulfood", "soup", "italian"],
     //Family
-    10751: ["pizza", "tacos", "burgers"],
+    10751: ["pizza", "mexican", "burgers"],
     //Fantasy
     14: ["italian", "pizza", "noodles"],
     //History
-    36: ["french", "thai", "cafes"],
+    36: ["french", "steakhouses", "cafes"],
     //Horror
-    27: ["noodles", "tacos", "burgers"],
+    27: ["noodles", "steakhouses", "burgers"],
     //Music
-    10402: ["tacos", "soup", "sandwiches"],
+    10402: ["pizza", "chinese", "sandwiches"],
     //Mystery
-    9648: ["japanese", "chinese", "thai"],
+    9648: ["japanese", "chinese", "fishnchips"],
     //Romance
     10749: ["cafes", "italian", "french"],
     //Science Fiction
@@ -156,11 +156,9 @@ var foodChoices = {
     //TV Movie
     10770: ["pizza", "chinese", "burgers"],
     //Thriller
-    53: ["thai", "noodles", "japanese"],
+    53: ["pizza", "noodles", "japanese"],
     //War
-    10752: ["comfortfood", "steakhouses", "southern"],
+    10752: ["cheesesteaks", "steakhouses", "fishnchips"],
     //Western
-    37: ["bbq", "steakhouses", "chickenwings"],
+    37: ["diners", "steakhouses", "burgers"],
 }
-
-
