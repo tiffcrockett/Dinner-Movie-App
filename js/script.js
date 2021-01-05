@@ -128,7 +128,7 @@ var foodChoices = {
     //Adventure
     12: ["fishnchips", "burgers", "tacos"],
     //Animation
-    16: ["comfortfood", "southern", "soulfood"],
+    16: ["comfortfood", "southern", "burgers"],
     //Comedy
     35: ["burgers", "steakouses", "mexican"],
     //Crime
@@ -136,7 +136,7 @@ var foodChoices = {
     //Documentary
     99: ["vegetarian", "italian", "japanese"],
     //Drama
-    18: ["soulfood", "comfortfood", "seafood"],
+    18: ["mexican", "comfortfood", "seafood"],
     //Family
     10751: ["pizza", "tacos", "burgers"],
     //Fantasy
