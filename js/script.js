@@ -16,7 +16,7 @@ function carousel() {
 
 $("#getMovieDinnerInfo").on("click", function (event) {
     event.preventDefault();
-    getYelp();
+    // getYelp();
     getMovie();
     renderInput();  
     $("#find-movies").show();
@@ -34,26 +34,21 @@ function getMovie() {
         method: "GET"
     }).then(function (response) {
 
-        console.log(response);
-
         var movieInfoDisplay = $('<div style="margin-top:20px;margin-bottom:2px;margin-left:50px;margin-right:30px;font-size:12px;">');
         var title = response.results[0].original_title;
         var plot = response.results[0].overview;
         var released = response.results[0].release_date;
         var genre = response.results[0].genre_ids[0];
 
-        console.log(genre);
+        getYelp(genre);
 
         var movieTitle = $("<h5></h5>").text(title);
         var plotInfo = $("<p>").text("Plot: " + plot);
         var releaseInfo = $("<p>").text("Released: " + released);
 
-   
-
         movieInfoDisplay.append(movieTitle);
         movieInfoDisplay.append(plotInfo);
         movieInfoDisplay.append(releaseInfo);
-
 
         $("#movie-view").append(movieInfoDisplay);
 
@@ -68,10 +63,14 @@ function getMovie() {
     })
 };
 
-function getYelp() {
+function getYelp(genre) {
+    var genreID = genre.toString();
+    var foodChoicesArray = foodChoices[genreID];
+    var Cuisine = foodChoicesArray[Math.floor(Math.random()*3)];
     var zipCode = $("#zip-code-input").val().trim();
 
-    var baseURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?cc=US&location=" + zipCode + "&categories=restaurants"
+    var baseURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?cc=US&location=" + zipCode + "&categories=" + Cuisine;
+    console.log(baseURL);
     $.ajax({
         url: baseURL,
         headers: {
@@ -106,8 +105,9 @@ function getYelp() {
                     var city = item.location.city;
                     var state = item.location.state;
                     var zipcode = item.location.zip_code;
+                    var RestaurantUrl = item.url
                     // Append our result into our page. Easier to call on one call for Yelp API. Need to random generate
-                    return ($('#food-1').append('<div style="margin-top:25px;margin-bottom:30px;margin-left:35px;font-size:13px;"><img src="' + image + '" style="width:100px;height:95px;justify-content:center;"><br><b>' + name + ' under ' + category + ' Category</b> <br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>')
+                    return ($('#food-1').append('<div style="margin-top:25px;margin-bottom:30px;margin-left:35px;font-size:13px;"><a href= "' + RestaurantUrl +'" target="_blank"><img src="' + image + '" style="width:100px;height:95px;justify-content:center;"></a><br><b>' + name + ' under ' + category + ' Category</b> <br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>')
 
                     );
                 });
@@ -122,56 +122,45 @@ function renderInput() {
     $("getMovieDinnerInfo").empty()
 }
 
-
-// function categories() {
-//     if (getMovie() === response.results[0].genres.id[18]) {
-
-//     }
-// }
 var foodChoices = {
     //Action
-    28: ["Hot dogs", "Sandwiches", "Burgers"],
+    28: ["hotdog", "sandwiches", "burgers"],
     //Adventure
-    12: ["Pizza", "Burgers", "Hot dogs"],
+    12: ["pizza", "burgers", "hotdog"],
     //Animation
-    16: ["Comfort food", "Pizza", "Fast food"],
+    16: ["comfortfood", "pizza", "hotdogs"],
     //Comedy
-    35: ["Burgers", "Fast food", "Mexican"],
+    35: ["burgers", "hotdogs", "mexican"],
     //Crime
-    80: ["Cheesesteaks", "Chicken Wings", "Fish & Chips"],
+    80: ["cheesesteaks", "chicken wings", "fishnchips"],
     //Documentary
-    99: ["French", "Italian", "Japanese"],
+    99: ["french", "italian", "japanese"],
     //Drama
-    18: ["Soul food", "Soup", "Italian"],
+    18: ["soul food", "soup", "italian"],
     //Family
-    10751: ["Pizza", "Fast food", "Burgers"],
+    10751: ["pizza", "hotdogs", "burgers"],
     //Fantasy
-    14: ["Italian", "Pizza", "Noodles"],
+    14: ["italian", "pizza", "noodles"],
     //History
-    36: ["French", "Steakhouses", "Cafes"],
+    36: ["french", "steakhouses", "cafes"],
     //Horror
-    27: ["Noodles", "Steakhouses", "Burgers"],
+    27: ["noodles", "steakhouses", "burgers"],
     //Music
-    10402: ["Pizza", "Chinese", "Sandwiches"],
+    10402: ["pizza", "chinese", "sandwiches"],
     //Mystery
-    9648: ["Japanese", "Chinese", "Fish & Chips"],
+    9648: ["japanese", "chinese", "fishnchips"],
     //Romance
-    10749: ["Cafes", "Italian", "French"],
+    10749: ["cafes", "italian", "french"],
     //Science Fiction
-    878: ["Chinese", "Hawaiian", "Japanese"],
+    878: ["chinese", "hawaiian", "japanese"],
     //TV Movie
-    10770: ["Pizza", "Chinese", "Burgers"],
+    10770: ["pizza", "chinese", "burgers"],
     //Thriller
-    53: ["Pizza", "Noodles", "Japanese"],
+    53: ["pizza", "noodles", "japanese"],
     //War
-    10752: ["Cheesesteaks", "Steakhouses", "Fish & Chips"],
+    10752: ["cheesesteaks", "steakhouses", "fishnchips"],
     //Western
-    37: ["Diners", "Steakhouses", "Burgers"],
+    37: ["diners", "steakhouses", "burgers"],
 }
-
-
-// note: testing pulling api together
-// var genre = response.Genre
-// var category = item.categories[0].title
 
 
