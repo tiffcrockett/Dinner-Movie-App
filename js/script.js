@@ -19,7 +19,6 @@ $("#getMovieDinnerInfo").on("click", function (event) {
     // getYelp();
     getMovie();
     renderInput();  
-    $("#find-movies").show();
 }) 
 
 
@@ -86,7 +85,7 @@ function getYelp(genre) {
             // If our results are greater than 0, continue
             if (totalresults > 0) {
                 // Display a header on the page with the number of results
-                $('#food-1').append('<h6 style="padding-left:35px;color:#ad1457;font-weight:bold;">Here are our dinner suggestions:</h6>');
+                $('#food-1').append('<h5 style="padding-left:35px;">Here are our dinner suggestions:</h5>');
                 // Itirate through the JSON array of 'businesses' which was returned by the API
 
                 $.each(data.businesses, function (i, item) {
@@ -107,7 +106,7 @@ function getYelp(genre) {
                     var zipcode = item.location.zip_code;
                     var RestaurantUrl = item.url
                     // Append our result into our page. Easier to call on one call for Yelp API. Need to random generate
-                    return ($('#food-1').append('<div style="margin-top:25px;margin-bottom:30px;margin-left:35px;font-size:13px;"><a href= "' + RestaurantUrl +'" target="_blank"><img src="' + image + '" style="width:100px;height:95px;justify-content:center;"></a><br><b>' + name + ' under ' + category + ' Category</b> <br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>')
+                    return ($('#food-1').append('<div style="margin-top:25px;margin-bottom:30px;margin-left:35px;font-size:13px;"><a href= "' + RestaurantUrl +'" target="_blank"><img src="' + image + '" style="width:100px;height:95px;justify-content:center;"></a><br><b>' + name + '</b><br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>')
 
                     );
                 });
@@ -128,27 +127,27 @@ var foodChoices = {
     //Adventure
     12: ["pizza", "burgers", "hotdog"],
     //Animation
-    16: ["comfortfood", "steakhouses", "soul food"],
+    16: ["comfortfood", "steakhouses", "soulfood"],
     //Comedy
-    35: ["burgers", "noodles", "mexican"],
+    35: ["burgers", "thai", "mexican"],
     //Crime
-    80: ["cheesesteaks", "chicken wings", "fishnchips"],
+    80: ["cheesesteaks", "chickenwings", "fishnchips"],
     //Documentary
-    99: ["french", "italian", "japanese"],
+    99: ["thai", "italian", "japanese"],
     //Drama
-    18: ["soul food", "soup", "italian"],
+    18: ["steakhouse", "chinese", "seafood"],
     //Family
     10751: ["pizza", "mexican", "burgers"],
     //Fantasy
     14: ["italian", "pizza", "noodles"],
     //History
-    36: ["french", "steakhouses", "cafes"],
+    36: ["french", "seafood", "cafes"],
     //Horror
-    27: ["noodles", "steakhouses", "burgers"],
+    27: ["mexican", "steakhouses", "burgers"],
     //Music
     10402: ["pizza", "chinese", "sandwiches"],
     //Mystery
-    9648: ["japanese", "chinese", "fishnchips"],
+    9648: ["japanese", "chinese", "thai"],
     //Romance
     10749: ["cafes", "italian", "french"],
     //Science Fiction
@@ -156,9 +155,9 @@ var foodChoices = {
     //TV Movie
     10770: ["pizza", "chinese", "burgers"],
     //Thriller
-    53: ["pizza", "noodles", "japanese"],
+    53: ["thai", "noodles", "japanese"],
     //War
     10752: ["cheesesteaks", "steakhouses", "fishnchips"],
     //Western
-    37: ["diners", "steakhouses", "burgers"],
+    37: ["diners", "steakhouses", "comfortfood"],
 }
