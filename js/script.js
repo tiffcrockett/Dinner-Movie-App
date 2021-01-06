@@ -86,7 +86,7 @@ function getYelp(genre) {
             // If our results are greater than 0, continue
             if (totalresults > 0) {
                 // Display a header on the page with the number of results
-                $('#food-1').append('<h6 style="padding-left:35px;color:#ad1457;font-weight:bold;">Here are our dinner suggestions:</h6>');
+                $('#food-1').append('<h5 style="padding-left:35px;color:#ad1457;font-weight:bold;">Here are our dinner suggestions:</h5>');
                 // Itirate through the JSON array of 'businesses' which was returned by the API
 
                 $.each(data.businesses, function (i, item) {
@@ -107,7 +107,7 @@ function getYelp(genre) {
                     var zipcode = item.location.zip_code;
                     var RestaurantUrl = item.url
                     // Append our result into our page. Easier to call on one call for Yelp API. Need to random generate
-                    return ($('#food-1').append('<div style="margin-top:25px;margin-bottom:30px;margin-left:35px;font-size:13px;"><a href= "' + RestaurantUrl +'" target="_blank"><img src="' + image + '" style="width:100px;height:95px;justify-content:center;"></a><br><b>' + name + ' under ' + category + ' Category</b> <br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>')
+                    return ($('#food-1').append('<div style="margin-top:25px;margin-bottom:30px;margin-left:35px;font-size:13px;"><a href= "' + RestaurantUrl +'" target="_blank"><img src="' + image + '" style="width:100px;height:95px;justify-content:center;"></a><br><b>' + name + '<br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>')
 
                     );
                 });
@@ -136,7 +136,7 @@ var foodChoices = {
     //Documentary
     99: ["vegetarian", "italian", "japanese"],
     //Drama
-    18: ["soulfood", "comfortfood", "seafood"],
+    18: ["soul food", "comfortfood", "seafood"],
     //Family
     10751: ["pizza", "tacos", "burgers"],
     //Fantasy
