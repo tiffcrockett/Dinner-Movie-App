@@ -124,29 +124,29 @@ function renderInput() {
 
 var foodChoices = {
     //Action
-    28: ["mexican", "sandwiches", "burgers"],
+    28: ["hotdog", "sandwiches", "burgers"],
     //Adventure
-    12: ["fishnchips", "burgers", "tacos"],
+    12: ["pizza", "burgers", "hotdog"],
     //Animation
-    16: ["comfortfood", "southern", "soulfood"],
+    16: ["comfortfood", "steakhouses", "soulfood"],
     //Comedy
-    35: ["burgers", "steakouses", "mexican"],
+    35: ["burgers", "thai", "mexican"],
     //Crime
-    80: ["cheesesteaks", "chickenwings", "seafood"],
+    80: ["cheesesteaks", "chickenwings", "fishnchips"],
     //Documentary
-    99: ["vegetarian", "italian", "japanese"],
+    99: ["thai", "italian", "japanese"],
     //Drama
-    18: ["soul food", "comfortfood", "seafood"],
+    18: ["steakhouse", "chinese", "seafood"],
     //Family
-    10751: ["pizza", "tacos", "burgers"],
+    10751: ["pizza", "mexican", "burgers"],
     //Fantasy
     14: ["italian", "pizza", "noodles"],
     //History
-    36: ["french", "thai", "cafes"],
+    36: ["french", "seafood", "cafes"],
     //Horror
-    27: ["noodles", "tacos", "burgers"],
+    27: ["mexican", "steakhouses", "burgers"],
     //Music
-    10402: ["tacos", "soup", "sandwiches"],
+    10402: ["pizza", "chinese", "sandwiches"],
     //Mystery
     9648: ["japanese", "chinese", "thai"],
     //Romance
@@ -158,9 +158,7 @@ var foodChoices = {
     //Thriller
     53: ["thai", "noodles", "japanese"],
     //War
-    10752: ["comfortfood", "steakhouses", "southern"],
+    10752: ["cheesesteaks", "steakhouses", "fishnchips"],
     //Western
-    37: ["bbq", "steakhouses", "chickenwings"],
+    37: ["diners", "steakhouses", "comfortfood"],
 }
-
-
