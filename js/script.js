@@ -165,8 +165,5 @@ var foodChoices = {
     //War
     10752: ["cheesesteaks", "steakhouses", "fishnchips"],
     //Western
-    37: ["diners", "steakhouses", "comfortfood"],
+    37: ["diners", "steakhouses", "burgers"],
 }
-
-
-
