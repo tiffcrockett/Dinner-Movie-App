@@ -20,6 +20,15 @@ The reason for creating this application was to remove the burden of having to p
 
 ## Webpage-Images
 
+### Desktop Screenshot
+![Screenshot of main webpage]('https://github.com/tiffcrockett/Dinner-Movie-App/blob/development/images/desktop-search-result-sample-screenshot.png?')
+
+### Desktop search example Screenshot
+![Screenshot of main webpage result example](images/desktop-search-result-sample-screenshot.png)
+
+### Mobile Screenshot
+![Screenshot of mobile webpage](images/mobile-screenshot.png)
+
 ## Installation
 
 No prior installation is required to properly use the Date Night application. Simply head to the Deployed Link included towards the bottom of this README.
@@ -40,6 +49,10 @@ No prior installation is required to properly use the Date Night application. Si
 ## Deployed-Link
 
 https://tiffcrockett.github.io/Dinner-Movie-App/
+
+## Previous repo
+
+https://github.com/roseannenguyen/Date-Night-API
 
 ## Credits
 

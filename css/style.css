@@ -68,6 +68,12 @@ h1 {
     padding-left: 0px;
 } 
 
+#return {
+    float: right;
+    font-size: x-small;
+    text-decoration: none;
+}
+
 #first-date-text {
     margin: 15px;
     padding: 25px;
