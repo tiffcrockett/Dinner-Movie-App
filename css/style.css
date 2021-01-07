@@ -35,7 +35,7 @@ h1 {
 }
  
 #how-to-container {
-    margin-left: 10px;
+    margin-left: 9px;
 }
 
 #how-to {
@@ -43,13 +43,13 @@ h1 {
 }  
 
 #input-main-container {
-    margin-left: 9px;
-    margin-right: 9px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
  
 #input-header { 
     background-color: #ad1457;
-    padding: 5px;
+    padding: 16px;
     font-size: 11px;
     color: #fff;
 }  
@@ -73,11 +73,6 @@ h1 {
     font-size: x-small;
     text-decoration: none;
 }
-
-#first-date-text {
-    margin: 5px;
-    padding: 5px;
-} 
 
 #on-date-img {
     display: none;
