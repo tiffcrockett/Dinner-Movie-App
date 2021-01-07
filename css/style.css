@@ -11,7 +11,7 @@ body{
 
 .wrapper { 
     height: 100%;
-	padding: 50px 40px 0 40px; 
+	padding: 5px 5px 0 5px; 
 }
 
 .main-card {
@@ -26,16 +26,16 @@ body{
 } 
 
 h1 { 
-    font-size: 29px;
+    font-size: 25px;
     font-weight: bold 
 }   
 
 .text {
-    font-size: 14px;
+    font-size: 10px;
 }
  
 #how-to-container {
-    margin-left: 25px;
+    margin-left: 10px;
 }
 
 #how-to {
@@ -43,8 +43,8 @@ h1 {
 }  
 
 #input-main-container {
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 9px;
+    margin-right: 9px;
 }
  
 #input-header { 
@@ -75,14 +75,14 @@ h1 {
 }
 
 #first-date-text {
-    margin: 15px;
-    padding: 25px;
+    margin: 5px;
+    padding: 5px;
 } 
 
 #on-date-img {
     display: none;
     height:150px;
-    width: 160px;
+    width: 140px;
     padding: 5px;
 } 
 
@@ -91,7 +91,7 @@ h1 {
 } 
 
 #forward {
-    font-size: small;
+    font-size: 10px;
     float:right;
 }
     
