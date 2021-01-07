@@ -20,6 +20,10 @@ The reason for creating this application was to remove the burden of having to p
 
 ## Webpage-Images
 
+![Screenshot of main webpage](images/desktop-screenshot.png)
+![Screenshot of main webpage result example](images/desktop-search-result-sample-screenshot.png)
+![Screenshot of mobile webpage](images/mobile-screenshot.png)
+
 ## Installation
 
 No prior installation is required to properly use the Date Night application. Simply head to the Deployed Link included towards the bottom of this README.
