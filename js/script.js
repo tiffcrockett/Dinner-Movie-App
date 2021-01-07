@@ -1,3 +1,6 @@
+
+// var storedUserSearch = JSON.parse(localStorage.getItem("userSearchResults"));
+
 var slideIndex = 0;
 carousel();
 
@@ -95,7 +98,6 @@ function getYelp(genre) {
 
                     var image = item.image_url;
                     var name = item.name;
-                    var category = item.categories[0].title
 
                     var rating = item.rating;
                     var reviewcount = item.review_count;
@@ -120,6 +122,13 @@ function renderInput() {
     $("#movie-view").empty()
     $("getMovieDinnerInfo").empty()
 }
+
+// var userSearch = {
+//     firstResult: $(this).movieInfoDisplay, movieImgDisplay,
+//     secondResult: $(this).parent().children("#food-1").val()
+//   }; 
+//     localStorage.setItem("userSearchResults", JSON.stringify(userSearch));
+
 
 var foodChoices = {
     //Action
@@ -161,3 +170,6 @@ var foodChoices = {
     //Western
     37: ["diners", "steakhouses", "comfortfood"],
 }
+
+
+
