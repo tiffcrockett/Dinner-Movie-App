@@ -21,7 +21,7 @@ The reason for creating this application was to remove the burden of having to p
 ## Webpage-Images
 
 ### Desktop Screenshot
-![Screenshot of main webpage](images/desktop-screenshot.png)
+![Screenshot of main webpage]('https://github.com/tiffcrockett/Dinner-Movie-App/blob/development/images/desktop-search-result-sample-screenshot.png?')
 
 ### Desktop search example Screenshot
 ![Screenshot of main webpage result example](images/desktop-search-result-sample-screenshot.png)
