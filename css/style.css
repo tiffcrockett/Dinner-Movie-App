@@ -105,6 +105,17 @@ h1 {
         font-size: 20px;
     } 
 
+    #how-to-container { 
+        margin-left: 35px;
+        margin-right:35px;
+    } 
+
+    #input-main-container {
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+
+
     #input-header {
         font-size: 15px;
     }  

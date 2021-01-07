@@ -33,7 +33,7 @@ function getMovie() {
         method: "GET"
     }).then(function (response) {
 
-        var movieInfoDisplay = $('<div style="margin-top:20px;margin-bottom:2px;margin-left:50px;margin-right:30px;font-size:12px;">');
+        var movieInfoDisplay = $('<div style="margin-top:20px;margin-bottom:2px;margin-left:20px;margin-right:30px;font-size:12px;">');
         var title = response.results[0].original_title;
         var plot = response.results[0].overview;
         var released = response.results[0].release_date;
@@ -52,10 +52,10 @@ function getMovie() {
 
         $("#movie-view").append(movieInfoDisplay);
 
-        var movieImgDisplay = $('<div style="margin-top:20px;margin-bottom:2px;margin-left:35px;font-size:12px;">');
+        var movieImgDisplay = $('<div style="margin-top:20px;margin-bottom:2px;margin-left:36px;font-size:12px;">');
 
         var imgURL = response.results[0].poster_path;
-        var img = $("<img>").attr("src", "https://image.tmdb.org/t/p/w300" + imgURL);
+        var img = $("<img>").attr("src", "https://image.tmdb.org/t/p/w200" + imgURL);
         movieImgDisplay.append(img);
 
         $("#movie-view").prepend(movieImgDisplay);
@@ -106,7 +106,7 @@ function getYelp(genre) {
                     var zipcode = item.location.zip_code;
                     var RestaurantUrl = item.url
                     // Append our result into our page. Easier to call on one call for Yelp API. Need to random generate
-                    return ($('#food-1').append('<div style="margin-top:25px;margin-bottom:30px;margin-left:35px;font-size:13px;"><a href= "' + RestaurantUrl +'" target="_blank"><img src="' + image + '" style="width:100px;height:95px;justify-content:center;"></a><br><b>' + name + '</b><br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>')
+                    return ($('#food-1').append('<div style="margin-top:25px;margin-bottom:30px;margin-left:20px;font-size:13px;"><a href= "' + RestaurantUrl +'" target="_blank"><img src="' + image + '" style="width:100px;height:95px;justify-content:center;"></a><br><b>' + name + '</b><br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>')
 
                     );
                 });
