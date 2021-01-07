@@ -16,7 +16,6 @@ function carousel() {
 
 $("#getMovieDinnerInfo").on("click", function (event) {
     event.preventDefault();
-    // getYelp();
     getMovie();
     renderInput();  
     $("#find-movies").show();
@@ -162,5 +161,3 @@ var foodChoices = {
     //Western
     37: ["diners", "steakhouses", "burgers"],
 }
-
-
