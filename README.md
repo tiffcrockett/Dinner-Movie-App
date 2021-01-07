@@ -20,8 +20,13 @@ The reason for creating this application was to remove the burden of having to p
 
 ## Webpage-Images
 
+### Desktop Screenshot
 ![Screenshot of main webpage](images/desktop-screenshot.png)
+
+### Desktop search example Screenshot
 ![Screenshot of main webpage result example](images/desktop-search-result-sample-screenshot.png)
+
+### Mobile Screenshot
 ![Screenshot of mobile webpage](images/mobile-screenshot.png)
 
 ## Installation
