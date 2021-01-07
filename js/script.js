@@ -1,6 +1,3 @@
-
-// var storedUserSearch = JSON.parse(localStorage.getItem("userSearchResults"));
-
 var slideIndex = 0;
 carousel();
 
@@ -19,8 +16,8 @@ function carousel() {
 
 $("#getMovieDinnerInfo").on("click", function (event) {
     event.preventDefault();
-    // getYelp();
     getMovie();
+    
     renderInput();  
 }) 
 
@@ -41,7 +38,8 @@ function getMovie() {
         var plot = response.results[0].overview;
         var released = response.results[0].release_date;
         var genre = response.results[0].genre_ids[0];
-
+        
+        storedInfo(title)
         getYelp(genre);
 
         var movieTitle = $("<h5></h5>").text(title);
@@ -95,10 +93,10 @@ function getYelp(genre) {
                     if (i >= 3) {
                         return false;
                     }
-
+                   
                     var image = item.image_url;
                     var name = item.name;
-
+                    
                     var rating = item.rating;
                     var reviewcount = item.review_count;
 
@@ -123,12 +121,11 @@ function renderInput() {
     $("getMovieDinnerInfo").empty()
 }
 
-// var userSearch = {
-//     firstResult: $(this).movieInfoDisplay, movieImgDisplay,
-//     secondResult: $(this).parent().children("#food-1").val()
-//   }; 
-//     localStorage.setItem("userSearchResults", JSON.stringify(userSearch));
+function storedInfo(movie) {
+console.log(movie)
+localStorage.setItem("lastMovie", movie);
 
+}
 
 var foodChoices = {
     //Action
