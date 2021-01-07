@@ -50,6 +50,10 @@ No prior installation is required to properly use the Date Night application. Si
 
 https://tiffcrockett.github.io/Dinner-Movie-App/
 
+## Previous repo
+
+https://github.com/roseannenguyen/Date-Night-API
+
 ## Credits
 
 * [Tiffany Crockett](https://github.com/tiffcrockett)
