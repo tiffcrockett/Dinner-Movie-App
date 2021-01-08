@@ -34,6 +34,7 @@ function getMovie() {
     }).then(function (response) {
 
         var movieInfoDisplay = $('<div style="margin-top:20px;margin-bottom:2px;margin-left:30px;margin-right:30px;font-size:12px;">');
+
         var title = response.results[0].original_title;
         var plot = response.results[0].overview;
         var released = response.results[0].release_date;
