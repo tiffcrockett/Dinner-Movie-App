@@ -96,8 +96,19 @@ h1 {
 
 @media (max-width: 280px) {
     h1 {
-        font-size: 22px;
+        font-size: 22px; 
+    } 
+
+    #movie-view {
+        margin-left: -15px;
     }
+} 
+
+@media (max-width: 540) {
+    #movie-view {
+        text-align: center;
+    }
+    
 }
 
 @media (min-width: 768px) { 
