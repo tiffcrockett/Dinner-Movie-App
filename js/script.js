@@ -33,7 +33,8 @@ function getMovie() {
         method: "GET"
     }).then(function (response) {
 
-        var movieInfoDisplay = $('<div style="margin-top:20px;margin-bottom:2px;margin-left:20px;margin-right:30px;font-size:12px;">');
+        var movieInfoDisplay = $('<div style="margin-top:20px;margin-bottom:2px;margin-left:30px;margin-right:30px;font-size:12px;">');
+
         var title = response.results[0].original_title;
         var plot = response.results[0].overview;
         var released = response.results[0].release_date;
@@ -85,7 +86,7 @@ function getYelp(genre) {
             // If our results are greater than 0, continue
             if (totalresults > 0) {
                 // Display a header on the page with the number of results
-                $('#food-1').append('<h5 style="padding-left:35px;">Here are our dinner suggestions:</h5>');
+                $('#food-1').append('<h5 style="padding-left:20px;">Here are our dinner suggestions:</h5>');
                 // Itirate through the JSON array of 'businesses' which was returned by the API
 
                 $.each(data.businesses, function (i, item) {
