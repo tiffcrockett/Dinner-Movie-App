@@ -74,7 +74,7 @@ function getYelp(genre) {
     $.ajax({
         url: baseURL,
         headers: {
-            'Authorization': 'Bearer FaCxUgHFTV2Lr8A77-yzvMxCHuxtSls3lpHAcf4Vyl75tvEq-J29nkZeRYZHhz--unL0b7aFAFYFrfpd6RhhRSg67b_53hXlbquPzOhE1U3diK56iMWGWygOoWbeX3Yx',
+            'Authorization': '8EyyBdKJBpDceSxJJWAMwtiBv8W_OrJPebXMOzF9IUsf8Wg407ACTj6a2hcr4lLDwlkhWRGCtwfRKmlyGNk092TCEEuJdDiOLlMXAYuQ2BdChpTURb_SzYpt0u70X3Yx',
 
         },
         method: 'GET',
