@@ -92,6 +92,12 @@ h1 {
     
 #footer { 
     background-color: #ad1457;
+} 
+
+@media (max-width: 280px) {
+    h1 {
+        font-size: 22px;git
+    }
 }
 
 @media (min-width: 768px) { 
