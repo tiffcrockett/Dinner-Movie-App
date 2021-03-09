@@ -48,7 +48,7 @@ No prior installation is required to properly use the Date Night application. Si
 
 ## Deployed-Link
 
-https://tiffcrockett.github.io/Dinner-Movie-App/
+https://tiffcrockett.github.io/dinner-movie-app/
 
 ## Previous repo
 
